@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Current Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bitcoin_price_label"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:text="N/A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bitcoin_price_cost"
+            android:textSize="36sp"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:id="@+id/chart_img"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1667"
+            android:id="@+id/one_day_btn"
+            android:text="1 day"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1667"
+            android:id="@+id/five_day_btn"
+            android:text="5 Day"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1667"
+            android:id="@+id/one_month_btn"
+            android:text="1 Mon"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1667"
+            android:id="@+id/six_month_btn"
+            android:text="6 Mon"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1667"
+            android:id="@+id/one_year_btn"
+            android:text="1 Year"
+            android:textSize="12sp" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1667"
+            android:id="@+id/two_year_btn"
+            android:text="2 Year"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

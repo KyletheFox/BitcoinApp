@@ -15,27 +15,7 @@
         android:layout_weight="0.3333"
         android:orientation="horizontal"
         android:background="@drawable/layout_border"
-        android:id="@+id/bitocin_layout">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.3"
-            app:srcCompat="@drawable/bitcoin_icon" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.7"
-            android:gravity="center_vertical"
-            android:text="Current Bitcoin Price"
-            android:textSize="24sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3333"
-        android:orientation="horizontal"
-        android:background="@drawable/layout_border">
+        android:id="@+id/price_layout">
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -46,7 +26,8 @@
             android:layout_height="match_parent"
             android:layout_weight="0.7"
             android:gravity="center_vertical"
-            android:text="Bitcoin Price Chart"
+            android:paddingRight="5dp"
+            android:text="Current Bitcoin Prices"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -55,7 +36,30 @@
         android:layout_height="0dp"
         android:layout_weight="0.3333"
         android:orientation="horizontal"
-        android:background="@drawable/layout_border">
+        android:background="@drawable/layout_border"
+        android:id="@+id/wallet_layout">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            app:srcCompat="@drawable/bitcoin_icon" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:paddingRight="5dp"
+            android:text="Wallet Balance"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3333"
+        android:orientation="horizontal"
+        android:background="@drawable/layout_border"
+        android:id="@+id/blockchain_layout">
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -66,6 +70,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.7"
             android:gravity="center_vertical"
+            android:paddingRight="5dp"
             android:text="Blockchain Info"
             android:textSize="24sp" />
     </LinearLayout>
