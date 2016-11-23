@@ -8,17 +8,24 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Blockchain Information" />
+        android:layout_height="0dp"
+        android:layout_weight="0.075"
+        android:text="Blockchain Information"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enter In Blocknumber:" />
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:text="Enter In Blocknumber:"
+        android:gravity="bottom" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
         android:orientation="horizontal">
 
         <EditText
@@ -30,17 +37,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:id="@+id/block_btn" />
+            android:id="@+id/block_btn"
+            android:text="Get Block Info" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Block Information"/>
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center_vertical"
+        android:text="Block Information"
+        android:textSize="18sp" />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.625"
         android:id="@+id/block_info_list"></ListView>
 
 

@@ -48,16 +48,23 @@ public class BlockInfoAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        View v = convertView;
+
         LayoutInflater inflater = activity.getLayoutInflater();
-        TextView tv = (TextView) inflater.inflate(R.layout.text_view, null);
+        v = inflater.inflate(R.layout.text_view, null);
+
+        TextView label = (TextView) v.findViewById(R.id.list_item_label);
+        TextView data = (TextView) v.findViewById(R.id.list_item_data);
+
+        label.setText(blockMapValues[position] + ":");
 
         try {
             Log.d("Block Data", json.getString(blockMapKeys[position]));
-            tv.setText(blockMapValues[position] + ": " + json.getString(blockMapKeys[position]));
+            data.setText(json.getString(blockMapKeys[position]));
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return tv;
+        return v;
     }
 }
