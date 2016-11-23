@@ -1,8 +1,8 @@
 package edu.temple.bitcoinapp;
 
+import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +19,6 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,15 +30,16 @@ import java.util.TimerTask;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BitcoinPriceFragment extends Fragment {
+public class PriceFragment extends Fragment {
 
     RequestQueue queue;
     TextView bitcoinPrice;
     ImageView chartImg;
     String chartRange;
     Button oneDay, fiveDay, oneMonth, sixMonth, oneYear, twoYear;
+    Timer timer;
 
-    public BitcoinPriceFragment() {
+    public PriceFragment() {
         // Required empty public constructor
     }
 
@@ -78,19 +78,23 @@ public class BitcoinPriceFragment extends Fragment {
         // Intitalize RequestQueue
         queue = Volley.newRequestQueue(v.getContext());
 
-        queue.add(updatePrice());
-        queue.add(updateChart());
-
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 queue.add(updatePrice());
                 queue.add(updateChart());
             }
-        }, 2000);
+        }, 0, 2000);
 
         return v;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        timer.cancel();
     }
 
     public JsonObjectRequest updatePrice() {

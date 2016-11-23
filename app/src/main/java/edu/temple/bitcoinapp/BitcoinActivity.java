@@ -15,7 +15,7 @@ import android.support.v7.app.AppCompatActivity;
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-public class BitcoinActivity extends AppCompatActivity implements BitcoinListFragment.ListInterface {
+public class BitcoinActivity extends AppCompatActivity implements MainListFragment.ListInterface {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -36,15 +36,15 @@ public class BitcoinActivity extends AppCompatActivity implements BitcoinListFra
         fm = getFragmentManager();
 
         // Load The list fragment
-        loadFragment(R.id.bitcoin_list_container, new BitcoinListFragment(), false);
+        loadFragment(R.id.bitcoin_list_container, new MainListFragment(), false);
 
         if (mTwoPane) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
             // activity should be in two-pane mode.
-            loadFragment(R.id.bitcoin_detail_container, new BitcoinPriceFragment(), false);
-            replaceFragment(R.id.bitcoin_list_container, new BitcoinListFragment(), false);
+            loadFragment(R.id.bitcoin_detail_container, new PriceFragment(), false);
+            replaceFragment(R.id.bitcoin_list_container, new MainListFragment(), false);
         }
     }
 
@@ -87,11 +87,11 @@ public class BitcoinActivity extends AppCompatActivity implements BitcoinListFra
         Resources res = getResources();
 
         if (res.getString(R.string.price_name) == page) {
-            return new BitcoinPriceFragment();
+            return new PriceFragment();
         } else if (res.getString(R.string.blockchain_name) == page) {
-            return new BitcoinBlockchainFragment();
+            return new BlockchainFragment();
         } else if (res.getString(R.string.wallet_name) == page) {
-            return new BitcoinWalletFragment();
+            return new WalletFragment();
         } else {
             // Shouldn't happen
             return null;

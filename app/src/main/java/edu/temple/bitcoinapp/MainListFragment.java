@@ -15,12 +15,12 @@ import android.widget.LinearLayout;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BitcoinListFragment extends Fragment {
+public class MainListFragment extends Fragment {
 
     LinearLayout priceLayout, blockLayout, walletLayout;
     ListInterface listInterface;
 
-    public BitcoinListFragment() {
+    public MainListFragment() {
         // Required empty public constructor
     }
 
