@@ -5,7 +5,9 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -26,6 +28,7 @@ public class BitcoinActivity extends AppCompatActivity implements MainListFragme
      */
     private boolean mTwoPane;
     private FragmentManager fm;
+    private Fragment frag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,7 @@ public class BitcoinActivity extends AppCompatActivity implements MainListFragme
 
     //  Load fragment in a specified frame
     private void replaceFragment(int paneId, Fragment fragment, boolean placeOnBackstack){
+        frag = fragment;
         FragmentTransaction ft = fm.beginTransaction()
                 .replace(paneId, fragment);
         if (placeOnBackstack)
@@ -104,5 +108,15 @@ public class BitcoinActivity extends AppCompatActivity implements MainListFragme
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (frag != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                frag.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            }
+        }
     }
 }
