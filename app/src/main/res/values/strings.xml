@@ -46,7 +46,7 @@
     <string name="address_balance_url" translatable="false">http://btc.blockr.io/api/v1/address/info/</string>
     <string name="block_info_url" translatable="false">http://btc.blockr.io/api/v1/block/info/</string>
 
-    <string-array name="block_map_keys">
+    <string-array name="block_map_keys" translatable="false">
         <item>nb</item>
         <item>hash</item>
         <item>version</item>

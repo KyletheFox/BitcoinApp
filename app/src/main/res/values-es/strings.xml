@@ -47,27 +47,15 @@
     <string name="address_balance_url">http://btc.blockr.io/api/v1/address/info/</string>
     <string name="block_info_url">http://btc.blockr.io/api/v1/block/info/</string>
 
-    <string-array name="block_map_keys">
-        <item>nb</item>
-        <item>hash</item>
-        <item>version</item>
-        <item>nb_txs</item>
-        <item>next_block_nb</item>
-        <item>prev_block_nb</item>
-        <item>fee</item>
-        <item>size</item>
-        <item>difficulty</item>
-    </string-array>
-
     <string-array name="block_map_values">
-        <item>Block Number</item>
+        <item>Número de bloque</item>
         <item>Hash</item>
-        <item>Version</item>
-        <item>Number of Transactions</item>
-        <item>Next Block</item>
-        <item>Previous Block</item>
-        <item>Fee</item>
-        <item>Size</item>
-        <item>Difficulty</item>
+        <item>Versión</item>
+        <item>Número de transacciones</item>
+        <item>Siguiente bloque</item>
+        <item>Bloque anterior</item>
+        <item>Tarifa</item>
+        <item>Tamaño</item>
+        <item>Dificultad para</item>
     </string-array>
 </resources>
