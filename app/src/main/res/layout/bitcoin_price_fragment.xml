@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:text="Current Price"
+            android:text="@string/price_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bitcoin_price_label"
@@ -21,7 +21,7 @@
             android:layout_weight="0.5"/>
 
         <TextView
-            android:text="N/A"
+            android:text="@string/price_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bitcoin_price_cost"
@@ -49,7 +49,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1667"
             android:id="@+id/one_day_btn"
-            android:text="1 day"
+            android:text="@string/price_one_day"
             android:textSize="12sp" />
 
         <Button
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1667"
             android:id="@+id/five_day_btn"
-            android:text="5 Day"
+            android:text="@string/price_five_day"
             android:textSize="12sp" />
 
         <Button
@@ -65,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1667"
             android:id="@+id/one_month_btn"
-            android:text="1 Mon"
+            android:text="@string/price_one_mon"
             android:textSize="12sp" />
 
         <Button
@@ -73,7 +73,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1667"
             android:id="@+id/six_month_btn"
-            android:text="6 Mon"
+            android:text="@string/price_six_mon"
             android:textSize="12sp" />
 
         <Button
@@ -81,14 +81,14 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1667"
             android:id="@+id/one_year_btn"
-            android:text="1 Year"
+            android:text="@string/price_one_year"
             android:textSize="12sp" />
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1667"
             android:id="@+id/two_year_btn"
-            android:text="2 Year"
+            android:text="@string/price_two_year"
             android:textSize="12sp" />
 
     </LinearLayout>

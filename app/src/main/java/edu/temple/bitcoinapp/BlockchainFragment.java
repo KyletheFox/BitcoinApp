@@ -1,8 +1,8 @@
 package edu.temple.bitcoinapp;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +31,7 @@ public class BlockchainFragment extends Fragment {
     Button blockBtn;
     EditText blockEdit;
     BlockInfoAdapter adapter;
+    BitcoinActivity activity;
 
     public BlockchainFragment() {
         // Required empty public constructor
@@ -43,13 +44,24 @@ public class BlockchainFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.bitcoin_blockchain_fragment, container, false);
 
+        activity = (BitcoinActivity) getActivity();
+
         listView = (ListView) v.findViewById(R.id.block_info_list);
         blockBtn = (Button) v.findViewById(R.id.block_btn);
         blockEdit = (EditText) v.findViewById(R.id.block_edit);
 
         queue = Volley.newRequestQueue(v.getContext());
 
-        queue.add(getBlockData("last"));
+        queue.add(getBlockData(getString(R.string.default_block)));
+
+        blockEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    activity.hideKeyboard(v);
+                }
+            }
+        });
 
         blockBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +81,7 @@ public class BlockchainFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject data = response.getJSONObject("data");
+                            JSONObject data = response.getJSONObject(getString(R.string.data_json));
                             adapter = new BlockInfoAdapter(data, getActivity());
                             listView.setAdapter(adapter);
                         } catch (JSONException e) {

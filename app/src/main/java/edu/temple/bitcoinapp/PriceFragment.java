@@ -108,8 +108,8 @@ public class PriceFragment extends Fragment {
                         double bitcoinRate;
                         NumberFormat nf = NumberFormat.getCurrencyInstance();
                         try {
-                            data = response.getJSONObject("USD");
-                            bitcoinRate = data.getDouble("15m");
+                            data = response.getJSONObject(getString(R.string.currency_json));
+                            bitcoinRate = data.getDouble(getString(R.string.rate_json));
                             bitcoinPrice.setText(nf.format(bitcoinRate));
                         } catch (JSONException e) {
                             e.printStackTrace();

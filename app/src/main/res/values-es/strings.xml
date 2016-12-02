@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bitcoin Aplicación</string>
+    <string name="title_bitcoin_detail">Bitcoin Detalle</string>
+    <string name="price_name">Precio</string>
+    <string name="wallet_name">Monedero</string>
+    <string name="blockchain_name">Blockchain</string>
+    <string name="block_header">Blockchain Información</string>
+    <string name="block_subheader">Entrar en Blocknumber:</string>
+    <string name="block_button">Obtén información de bloque</string>
+    <string name="block_text">Bloque información</string>
+    <string name="main_price">Precios actuales de Bitcoin</string>
+    <string name="main_wallet">Equilibrio de cartera</string>
+    <string name="main_block">Blockchain información</string>
+    <string name="price_header">Precio actual</string>
+    <string name="price_default">N/A</string>
+    <string name="price_one_day">1 día</string>
+    <string name="price_five_day">5 día</string>
+    <string name="price_one_mon">1 mes</string>
+    <string name="price_six_mon">6 mes</string>
+    <string name="price_one_year">1 año</string>
+    <string name="price_two_year">2 año</string>
+    <string name="wallet_header">Equilibrio de una dirección de cartera</string>
+    <string name="wallet_subheader">TTipo fuelle dirección o pulse botón de QR</string>
+    <string name="wallet_balance">Conseguir equilibrio</string>
+    <string name="wallet_qr">Uso QR Scanner</string>
+    <string name="wallet_text">Equilibrar:</string>
+    <string name="wallet_default">0.0000 BTC</string>
+
+    <string name="data_json">data</string>
+    <string name="balance_json"></string>
+    <string name="default_block">last</string>
+    <string name="currency_json">USD</string>
+    <string name="rate_json">15m</string>
+    <string name="prefernce_key">SavedAddress</string>
+    <string name="price_update_url">https://blockchain.info/ticker
+</string>
+
+    <string name="chart_url">http://chart.yahoo.com/z?s=BTCUSD=X</string>
+    <string name="one_day">1d</string>
+    <string name="five_day">5d</string>
+    <string name="one_month">30d</string>
+    <string name="six_month">182d</string>
+    <string name="one_year">365d</string>
+    <string name="two_year">730d</string>
+
+    <string name="address_balance_url">http://btc.blockr.io/api/v1/address/info/</string>
+    <string name="block_info_url">http://btc.blockr.io/api/v1/block/info/</string>
+
+    <string-array name="block_map_keys">
+        <item>nb</item>
+        <item>hash</item>
+        <item>version</item>
+        <item>nb_txs</item>
+        <item>next_block_nb</item>
+        <item>prev_block_nb</item>
+        <item>fee</item>
+        <item>size</item>
+        <item>difficulty</item>
+    </string-array>
+
+    <string-array name="block_map_values">
+        <item>Block Number</item>
+        <item>Hash</item>
+        <item>Version</item>
+        <item>Number of Transactions</item>
+        <item>Next Block</item>
+        <item>Previous Block</item>
+        <item>Fee</item>
+        <item>Size</item>
+        <item>Difficulty</item>
+    </string-array>
+</resources>

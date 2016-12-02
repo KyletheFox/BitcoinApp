@@ -17,17 +17,21 @@ import org.json.JSONObject;
 
 public class BlockInfoAdapter extends BaseAdapter {
 
-    private String[] blockMapKeys = {"nb","hash","version","nb_txs","next_block_nb",
-            "prev_block_nb", "fee", "size", "difficulty"};
-    private String[] blockMapValues = {"Block Number","Hash","Version", "Number of Transactions",
-            "Next Block","Previous Block","Fee","Size","Difficulty"};
+    private String[] blockMapKeys;
+//            {"nb","hash","version","nb_txs","next_block_nb",
+//            "prev_block_nb", "fee", "size", "difficulty"};
+    private String[] blockMapValues;
+//            {"Block Number","Hash","Version", "Number of Transactions",
+//            "Next Block","Previous Block","Fee","Size","Difficulty"};
     private JSONObject json;
-    private Activity activity;
+    private Activity  activity;
 
     public BlockInfoAdapter(JSONObject json, Activity activity) {
         super();
         this.json = json;
         this.activity = activity;
+        this.blockMapKeys = activity.getResources().getStringArray(R.array.block_map_keys);
+        this.blockMapValues = activity.getResources().getStringArray(R.array.block_map_values);
     }
 
     @Override

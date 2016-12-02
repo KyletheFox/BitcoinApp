@@ -1,11 +1,10 @@
 package edu.temple.bitcoinapp;
 
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,15 +50,16 @@ public class MainListFragment extends Fragment {
 
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
+
+    @Override  @Deprecated
+    public void onAttach(Activity activity) {
         try {
-            listInterface = (ListInterface) context;
+            listInterface = (ListInterface) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() +
+            throw new ClassCastException(activity.toString() +
                     "must implement ListInterface");
         }
+        super.onAttach(activity);
     }
 
     @Override

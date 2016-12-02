@@ -1,23 +1,73 @@
 <resources>
-    <string name="app_name">BitcoinApp</string>
+    <string name="app_name">Bitcoin App</string>
     <string name="title_bitcoin_detail">Bitcoin Detail</string>
     <string name="price_name">Price</string>
     <string name="wallet_name">Wallet</string>
     <string name="blockchain_name">Blockchain</string>
-    <string name="price_update_url">https://blockchain.info/ticker
+    <string name="block_header">Blockchain Information</string>
+    <string name="block_subheader">Enter In Blocknumber:</string>
+    <string name="block_button">Get Block Info</string>
+    <string name="block_text">Block Information</string>
+    <string name="main_price">Current Bitcoin Prices</string>
+    <string name="main_wallet">Wallet Balance</string>
+    <string name="main_block">Blockchain Info</string>
+    <string name="price_header">Current Price</string>
+    <string name="price_default">N/A</string>
+    <string name="price_one_day">1 day</string>
+    <string name="price_five_day">5 Day</string>
+    <string name="price_one_mon">1 Mon</string>
+    <string name="price_six_mon">6 Mon</string>
+    <string name="price_one_year">1 Year</string>
+    <string name="price_two_year">2 Year</string>
+    <string name="wallet_header">Get Balance Of A Wallet Address</string>
+    <string name="wallet_subheader">Type Address Bellow or Push QR Button</string>
+    <string name="wallet_balance">Get Balance</string>
+    <string name="wallet_qr">Use QR Scanner</string>
+    <string name="wallet_text">Balance:</string>
+    <string name="wallet_default">0.0000 BTC</string>
+
+    <string name="data_json" translatable="false">data</string>
+    <string name="balance_json" translatable="false">balance</string>
+    <string name="default_block" translatable="false">last</string>
+    <string name="currency_json" translatable="false">USD</string>
+    <string name="rate_json" translatable="false">15m</string>
+    <string name="prefernce_key" translatable="false">SavedAddress</string>
+    <string name="price_update_url" translatable="false">https://blockchain.info/ticker
 </string>
-    <string name="chart_url">http://chart.yahoo.com/z?s=BTCUSD=X</string>
-    <string name="one_day">1d</string>
-    <string name="five_day">5d</string>
-    <string name="one_month">30d</string>
-    <string name="six_month">182d</string>
-    <string name="one_year">365d</string>
-    <string name="two_year">730d</string>
 
-    <string name="address_balance_url">http://btc.blockr.io/api/v1/address/info/</string>
-    <string name="block_info_url">http://btc.blockr.io/api/v1/block/info/</string>
+    <string name="chart_url" translatable="false">http://chart.yahoo.com/z?s=BTCUSD=X</string>
+    <string name="one_day" translatable="false">1d</string>
+    <string name="five_day" translatable="false">5d</string>
+    <string name="one_month" translatable="false">30d</string>
+    <string name="six_month" translatable="false">182d</string>
+    <string name="one_year" translatable="false">365d</string>
+    <string name="two_year" translatable="false">730d</string>
 
+    <string name="address_balance_url" translatable="false">http://btc.blockr.io/api/v1/address/info/</string>
+    <string name="block_info_url" translatable="false">http://btc.blockr.io/api/v1/block/info/</string>
+    
+    <string-array name="block_map_keys">
+        <item>nb</item>
+        <item>hash</item>
+        <item>version</item>
+        <item>nb_txs</item>
+        <item>next_block_nb</item>
+        <item>prev_block_nb</item>
+        <item>fee</item>
+        <item>size</item>
+        <item>difficulty</item>
+    </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="block_map_values">
+        <item>Block Number</item>
+        <item>Hash</item>
+        <item>Version</item>
+        <item>Number of Transactions</item>
+        <item>Next Block</item>
+        <item>Previous Block</item>
+        <item>Fee</item>
+        <item>Size</item>
+        <item>Difficulty</item>
+    </string-array>
+
 </resources>

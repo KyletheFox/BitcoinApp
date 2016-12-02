@@ -1,11 +1,14 @@
 package edu.temple.bitcoinapp;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 /**
  * An activity representing a list of Bitcoins. This activity
@@ -96,5 +99,10 @@ public class BitcoinActivity extends AppCompatActivity implements MainListFragme
             // Shouldn't happen
             return null;
         }
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

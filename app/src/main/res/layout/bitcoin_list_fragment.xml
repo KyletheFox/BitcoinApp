@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:divider="?android:attr/dividerHorizontal"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -27,7 +29,7 @@
             android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:paddingRight="5dp"
-            android:text="Current Bitcoin Prices"
+            android:text="@string/main_price"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -49,7 +51,7 @@
             android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:paddingRight="5dp"
-            android:text="Wallet Balance"
+            android:text="@string/main_wallet"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -71,7 +73,7 @@
             android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:paddingRight="5dp"
-            android:text="Blockchain Info"
+            android:text="@string/main_block"
             android:textSize="24sp" />
     </LinearLayout>
 

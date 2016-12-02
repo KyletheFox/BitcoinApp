@@ -43,6 +43,8 @@ public class WalletFragment extends Fragment {
     ArrayList<String> savedAddresses;
     ArrayAdapter<String> adapter;
     SharedPreferences sharedPreferences;
+    String preferenceName;
+    BitcoinActivity activity;
 
 
     public WalletFragment() {
@@ -56,11 +58,24 @@ public class WalletFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.bitcoin_wallet_fragment, container, false);
 
+        activity = (BitcoinActivity) getActivity();
+        
+        preferenceName = getString(R.string.prefernce_key);
+
         walletBalance = (TextView) v.findViewById(R.id.wallet_balance);
         getBalanceFromText = (Button) v.findViewById(R.id.get_balance_btn);
         walletBalanceAddress = (AutoCompleteTextView) v.findViewById(R.id.wallet_address_text);
 
         walletBalanceAddress.setThreshold(0);
+
+        walletBalanceAddress.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    activity.hideKeyboard(v);
+                }
+            }
+        });
 
         queue = Volley.newRequestQueue(v.getContext());
 
@@ -76,7 +91,7 @@ public class WalletFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(savedAddresses);
         Log.d("SavedAddress onPause", json);
-        editor.putString("SavedAddress", json);
+        editor.putString(preferenceName, json);
         editor.apply();
     }
 
@@ -89,7 +104,7 @@ public class WalletFragment extends Fragment {
 
         if (sharedPreferences.getString("SavedAddress", null) != null) {
             Gson gson = new Gson();
-            String json = sharedPreferences.getString("SavedAddress", null);
+            String json = sharedPreferences.getString(preferenceName, null);
             Log.d("json", json);
             Type type = new TypeToken<ArrayList<String>>() {
             }.getType();
@@ -111,7 +126,7 @@ public class WalletFragment extends Fragment {
                 Log.d("Saved Addresses", savedAddresses.toString());;
                 queue.add(getBalance(address));
 
-                if (sharedPreferences.getString("SavedAddress", null) != null) {
+                if (sharedPreferences.getString(preferenceName, null) != null) {
                     adapter.clear();
                     adapter.addAll(savedAddresses);
                 }
