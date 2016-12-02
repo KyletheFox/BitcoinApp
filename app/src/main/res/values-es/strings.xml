@@ -27,26 +27,6 @@
     <string name="wallet_text">Equilibrar:</string>
     <string name="wallet_default">0.0000 BTC</string>
 
-    <string name="data_json">data</string>
-    <string name="balance_json"></string>
-    <string name="default_block">last</string>
-    <string name="currency_json">USD</string>
-    <string name="rate_json">15m</string>
-    <string name="prefernce_key">SavedAddress</string>
-    <string name="price_update_url">https://blockchain.info/ticker
-</string>
-
-    <string name="chart_url">http://chart.yahoo.com/z?s=BTCUSD=X</string>
-    <string name="one_day">1d</string>
-    <string name="five_day">5d</string>
-    <string name="one_month">30d</string>
-    <string name="six_month">182d</string>
-    <string name="one_year">365d</string>
-    <string name="two_year">730d</string>
-
-    <string name="address_balance_url">http://btc.blockr.io/api/v1/address/info/</string>
-    <string name="block_info_url">http://btc.blockr.io/api/v1/block/info/</string>
-
     <string-array name="block_map_values">
         <item>Número de bloque</item>
         <item>Hash</item>
