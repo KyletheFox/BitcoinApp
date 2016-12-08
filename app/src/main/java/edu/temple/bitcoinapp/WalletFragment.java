@@ -14,9 +14,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -49,9 +51,10 @@ public class WalletFragment extends Fragment {
     Button getBalanceFromText;
     Button qrCode;
     ArrayList<String> savedAddresses;
-    ArrayAdapter<String> adapter;
+    ArrayAdapter<String> adapter, spinnerAdapter;
     SharedPreferences sharedPreferences;
     String preferenceName;
+    Spinner spinner;
     BitcoinActivity activity;
 
     public final static int QR_KEY = 9585;
@@ -82,7 +85,8 @@ public class WalletFragment extends Fragment {
         walletBalance = (TextView) v.findViewById(R.id.wallet_balance);
         getBalanceFromText = (Button) v.findViewById(R.id.get_balance_btn);
         walletBalanceAddress = (AutoCompleteTextView) v.findViewById(R.id.wallet_address_text);
-        qrCode = (Button) v.findViewById(R.id.qr_btn); 
+        qrCode = (Button) v.findViewById(R.id.qr_btn);
+        spinner = (Spinner) v.findViewById(R.id.address_spinner);
 
         walletBalanceAddress.setThreshold(0);
 
@@ -138,7 +142,10 @@ public class WalletFragment extends Fragment {
             savedAddresses = gson.fromJson(json, type);
             adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line,
                     savedAddresses.toArray(new String[savedAddresses.size()]));
+            spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line,
+                    savedAddresses.toArray(new String[savedAddresses.size()]));
             walletBalanceAddress.setAdapter(adapter);
+            spinner.setAdapter(spinnerAdapter);
         } else {
             Log.d("SavedAddressOnResume", "empty");
         }
@@ -160,11 +167,28 @@ public class WalletFragment extends Fragment {
             }
         });
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                walletBalanceAddress.setText(parent.getItemAtPosition(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
 
     public JsonObjectRequest getBalance(String address) {
-        String updateUrl = getString(R.string.address_balance_url) + address;
+        String updateUrl;
+        if (address != null)
+            updateUrl = getString(R.string.address_balance_url) + address;
+        else
+            updateUrl = getString(R.string.address_balance_url) + "last";
+
         return new JsonObjectRequest(Request.Method.GET, updateUrl, null,
                 new Response.Listener<JSONObject>() {
             @Override

@@ -54,10 +54,16 @@
             android:text="@string/wallet_qr" />
     </LinearLayout>
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:id="@+id/address_spinner"></Spinner>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
+        android:layout_weight="0.3"
         android:orientation="horizontal"
         android:paddingTop="15dp">
 
